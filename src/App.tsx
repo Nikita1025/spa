@@ -4,7 +4,7 @@ import Header from "./components/header/Header";
 import {Posts} from "./components/posts/Posts";
 import {Route, Routes} from "react-router-dom";
 import {AboutMe} from "./components/aboutMe/AboutMe";
-import User from "./components/user/User";
+import {User} from "./components/user/User";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
             <Route path='/' element={<Posts/>}/>
             <Route path='/about' element={<AboutMe/>}/>
-            <Route path='/user' element={<User/>}/>
+            <Route path='/user/:userId' element={<User/>}/>
         </Routes>
     </div>
   );

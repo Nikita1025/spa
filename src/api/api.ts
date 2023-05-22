@@ -11,6 +11,9 @@ export const GlobalApi={
     },
     getComments(id:number){
         return instance.get<CommentsType[]>(`posts/${id}/comments`)
+    },
+    getUser(id:number){
+        return instance.get(`users/${id}`)
     }
 }
 

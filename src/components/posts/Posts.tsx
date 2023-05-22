@@ -6,15 +6,11 @@ import avatar from '../../images/avatar.jpeg'
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {getCommentsTC, getPostTC} from "../../store/post-reducer";
 import {Image} from "react-bootstrap";
-import Nav from 'react-bootstrap/Nav';
-import {render} from "@testing-library/react";
 import {Comment} from "./Comment";
-import {Link, Navigate, useNavigate, useParams} from "react-router-dom";
-import {User} from "../user/User";
+import {Link} from "react-router-dom";
 
 export const Posts = () => {
     const dispatch = useAppDispatch()
-    const navigate = useNavigate()
     const {posts} = useAppSelector(state => state.post)
     useEffect(() => {
         setTimeout(() => {

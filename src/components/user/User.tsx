@@ -1,18 +1,19 @@
-import React, {FC, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {getPostTC, getUserTC} from "../../store/post-reducer";
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import style from "./User.module.css";
 import {Image} from "react-bootstrap";
 import avatar from "../../images/avatar.jpeg";
 import Button from "react-bootstrap/Button";
-import {Comment} from "../posts/Comment";
 
 export const User = () => {
     const {users, posts} = useAppSelector(state => state.post)
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+
     let {userId} = useParams()
     useEffect(() => {
         setTimeout(() => {
@@ -20,6 +21,9 @@ export const User = () => {
             dispatch(getPostTC())
         }, 500)
     }, [userId])
+    const onClickBack=()=>{
+        navigate('/')
+    }
     return (
         <div>
             <Card className={style.container}>
@@ -31,6 +35,7 @@ export const User = () => {
                         <ListGroup.Item>{users.website}</ListGroup.Item>
                     </ListGroup>
                 </>}
+                <Button className={style.button} onClick={onClickBack}>Back</Button>
             </Card>
             {posts?.map(el =>
                 <>

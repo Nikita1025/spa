@@ -1,0 +1,14 @@
+.container{
+    margin: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.image {
+    border-radius: 8px;
+
+}
+.card{
+    width: 50vw;
+    height: 50vh;
+}

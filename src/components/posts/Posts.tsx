@@ -4,24 +4,27 @@ import Card from 'react-bootstrap/Card';
 import style from './Posts.module.css'
 import avatar from '../../images/avatar.jpeg'
 import {useAppDispatch, useAppSelector} from "../../store/store";
-import {getCommentsTC, getPostTC} from "../../store/post-reducer";
+import {changeStatusAC, getCommentsTC, getPostTC} from "../../store/post-reducer";
 import {Image} from "react-bootstrap";
 import {Comment} from "./Comment";
 import {Link} from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner';
 
 export const Posts = () => {
     const dispatch = useAppDispatch()
-    const {posts} = useAppSelector(state => state.post)
+    const {posts,status} = useAppSelector(state => state.post)
+
     useEffect(() => {
+        dispatch(changeStatusAC('loading'))
         setTimeout(() => {
             dispatch(getPostTC())
-
         }, 500)
     }, [])
     const [link, setLink] = useState<boolean>(false)
     const onClickLink = (id: number) => {
         setLink(!link)
         if (!link) {
+            dispatch(changeStatusAC('loading'))
             setTimeout(() => {
                 dispatch(getCommentsTC(id))
             }, 500)

@@ -2,12 +2,13 @@ import React, { useEffect} from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import {useAppDispatch, useAppSelector} from "../../store/store";
-import {getPostTC, getUserTC} from "../../store/post-reducer";
+import {changeStatusAC, getPostTC, getUserTC} from "../../store/post-reducer";
 import {Link, useNavigate, useParams} from "react-router-dom";
 import style from "./User.module.css";
 import {Image} from "react-bootstrap";
 import avatar from "../../images/avatar.jpeg";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 
 export const User = () => {
     const {users, posts} = useAppSelector(state => state.post)
@@ -16,6 +17,7 @@ export const User = () => {
 
     let {userId} = useParams()
     useEffect(() => {
+        dispatch(changeStatusAC('loading'))
         setTimeout(() => {
             dispatch(getUserTC(+userId!))
             dispatch(getPostTC())

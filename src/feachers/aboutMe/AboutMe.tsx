@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import avatar from '../../images/image.png'
+import avatar from '../../assets/images/image.png'
 import style from './AboutMe.module.css'
 
 export const AboutMe = () => {

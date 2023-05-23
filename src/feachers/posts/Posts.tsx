@@ -2,13 +2,12 @@ import React, {useEffect, useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import style from './Posts.module.css'
-import avatar from '../../images/avatar.jpeg'
+import avatar from '../../assets/images/avatar.jpeg'
 import {useAppDispatch, useAppSelector} from "../../store/store";
-import {changeStatusAC, getCommentsTC, getPostTC} from "../../store/post-reducer";
+import {changeStatusAC, getCommentsTC, getPostTC} from "../../store/reducer/post-reducer";
 import {Image} from "react-bootstrap";
 import {Comment} from "./Comment";
 import {Link} from "react-router-dom";
-import Spinner from 'react-bootstrap/Spinner';
 
 export const Posts = () => {
     const dispatch = useAppDispatch()

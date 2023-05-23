@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/header/Header";
-import {Posts} from "./components/posts/Posts";
+import Header from "../feachers/header/Header";
+import {Posts} from "../feachers/posts/Posts";
 import {Route, Routes} from "react-router-dom";
-import {AboutMe} from "./components/aboutMe/AboutMe";
-import {User} from "./components/user/User";
+import {AboutMe} from "../feachers/aboutMe/AboutMe";
+import {User} from "../feachers/user/User";
 import Spinner from "react-bootstrap/Spinner";
-import {useAppSelector} from "./store/store";
+import {useAppSelector} from "../store/store";
 import {ProgressBar} from "react-bootstrap";
 
 function App() {

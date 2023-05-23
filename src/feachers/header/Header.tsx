@@ -12,7 +12,7 @@ function Header() {
             {[false].map((expand) => (
                 <Navbar expand={expand} className={style.container}>
                     <Container fluid>
-                        <Navbar.Brand>Navbar Offcanvas</Navbar.Brand>
+                        <Navbar.Brand>Appendix posts</Navbar.Brand>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}

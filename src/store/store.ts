@@ -1,6 +1,6 @@
 import {applyMiddleware, combineReducers, createStore, legacy_createStore} from "redux";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
-import {ActionType, postReducer} from "./post-reducer";
+import {ActionType, postReducer} from "./reducer/post-reducer";
 import thunkMiddleware, {ThunkDispatch} from 'redux-thunk';
 
 

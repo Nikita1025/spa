@@ -1,5 +1,5 @@
 import axios from "axios";
-import {CommentsType, PostType} from "../store/post-reducer";
+import {CommentsType, PostType, UsersType} from "../feachers/types/types";
 
 const instance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com/'
@@ -13,7 +13,7 @@ export const GlobalApi={
         return instance.get<CommentsType[]>(`posts/${id}/comments`)
     },
     getUser(id:number){
-        return instance.get(`users/${id}`)
+        return instance.get<UsersType>(`users/${id}`)
     }
 }
 

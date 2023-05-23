@@ -1,5 +1,6 @@
 import {Dispatch} from "redux";
-import {GlobalApi} from "../api/api";
+import {GlobalApi} from "../../api/api";
+import {CommentsType, PostType, StatusType, UsersType} from "../../feachers/types/types";
 
 let initialState: InitialStateType = {
     posts:[],
@@ -13,46 +14,7 @@ export type InitialStateType = {
     users: UsersType
     status: StatusType
 }
-export type StatusType = 'idle' | 'loading' | 'success' | 'failed'
 
-export type PostType={
-    userId: number
-    id: number
-    title: string
-    body: string
-}
-export type CommentsType={
-    postId: number
-    id: number
-    name: string
-    email:string
-    body: string
-}
-export type UsersType={
-    id: number
-    name: string
-    username:string
-    email:string
-    address: AddressType
-    phone: string
-    website: string
-    company:CompanyType
-}
-type CompanyType={
-    name: string
-    catchPhrase: string
-    bs: string
-}
-type AddressType={
-    street: string
-    suite: string
-    city: string
-    zipcode: string
-    geo:{
-        lat: string
-        lng: string
-    }
-}
 export const postReducer = (state = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case "GET-POSTS":{
@@ -95,7 +57,6 @@ export const getCommentsTC =(id:number)=>  (dispatch:Dispatch)=>{
         .then(res=>{
             dispatch(getCommentsAC(res.data))
             dispatch(changeStatusAC('success'))
-
         })
 }
 export const getUserTC =(id:number)=>  (dispatch:Dispatch)=>{

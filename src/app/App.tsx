@@ -18,7 +18,7 @@ const App = (): ReactElement => {
       <Header />
       {status === 'loading' && <ProgressBar animated={true} now={100} />}
       <Routes>
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/" element={<Posts />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/user/:userId" element={<User />} />
       </Routes>

@@ -27,7 +27,7 @@ export const User = (): ReactElement => {
     }, 500);
   }, [dispatch, userId]);
   const onClickBack = (): void => {
-    navigate('/');
+    navigate('/posts');
   };
 
   return (

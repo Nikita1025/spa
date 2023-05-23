@@ -1,3 +1,5 @@
+import {changeStatusAC, getCommentsAC, getPostsAC, getUserAC} from "../../store/reducer/post-reducer";
+
 export type StatusType = 'idle' | 'loading' | 'success' | 'failed'
 
 export type PostType={
@@ -38,3 +40,7 @@ type AddressType={
         lng: string
     }
 }
+export type ActionType= ReturnType<typeof getPostsAC>
+    | ReturnType<typeof getCommentsAC>
+    | ReturnType<typeof getUserAC>
+    | ReturnType<typeof changeStatusAC>

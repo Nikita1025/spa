@@ -6,12 +6,12 @@ import avatar from '../../assets/images/avatar.jpeg'
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {changeStatusAC, getCommentsTC, getPostTC} from "../../store/reducer/post-reducer";
 import {Image} from "react-bootstrap";
-import {Comment} from "./Comment";
+import {Comment} from "./comments/Comment";
 import {Link} from "react-router-dom";
 
 export const Posts = () => {
     const dispatch = useAppDispatch()
-    const {posts,status} = useAppSelector(state => state.post)
+    const {posts} = useAppSelector(state => state.post)
 
     useEffect(() => {
         dispatch(changeStatusAC('loading'))
@@ -34,7 +34,7 @@ export const Posts = () => {
     return (
         <div className={style.container}>
             {posts?.map(el =>
-                    <Card className={style.container}>
+                    <Card key={el.id} className={style.container}>
                         <Card.Header>
                             <Link to={`/user/${el.userId}`}>
                                 <Image src={avatar} className={style.avatar}/>

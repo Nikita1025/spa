@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {GlobalApi} from "../../api/api";
-import {CommentsType, PostType, StatusType, UsersType} from "../../feachers/types/types";
+import {ActionType, CommentsType, PostType, StatusType, UsersType} from "../../feachers/types/types";
 
 let initialState: InitialStateType = {
     posts:[],
@@ -38,12 +38,6 @@ export const getPostsAC=(posts:PostType[])=>({type:'GET-POSTS', posts} as const)
 export const getCommentsAC=(comments:CommentsType[])=>({type:'GET-COMMENTS', comments} as const)
 export const getUserAC=(users:UsersType)=>({type:'GET-USERS', users} as const)
 export const changeStatusAC=(status:StatusType)=>({type:'CHANGE-STATUS', status} as const)
-
-export type ActionType= ReturnType<typeof getPostsAC>
-    | ReturnType<typeof getCommentsAC>
-    | ReturnType<typeof getUserAC>
-    | ReturnType<typeof changeStatusAC>
-
 
 export const getPostTC =()=> (dispatch:Dispatch)=>{
   GlobalApi.getPosts()

@@ -41,7 +41,7 @@ export const User = () => {
             {posts?.map(el =>
                 <>
                     {el.userId === +userId! &&
-                        <Card className={style.container}>
+                        <Card key={el.id} className={style.container}>
                             <Card.Header>
                                 <Link to={`/user/${el.userId}`}>
                                     <Image src={avatar} className={style.avatar}/>

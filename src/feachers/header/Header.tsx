@@ -22,7 +22,7 @@ const Header = (): ReactElement => {
         <Navbar key={index} expand={expand} className={style.container}>
           <Container fluid>
             <Navbar.Brand>Appendix posts</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}

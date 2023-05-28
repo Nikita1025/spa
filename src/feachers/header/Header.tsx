@@ -24,7 +24,6 @@ const Header = (): ReactElement => {
             <Navbar.Brand>Appendix posts</Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
             >

@@ -28,9 +28,7 @@ const Header = (): ReactElement => {
               placement="end"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Menu
-                </Offcanvas.Title>
+                <Offcanvas.Title>Menu</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">

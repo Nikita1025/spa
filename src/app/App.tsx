@@ -12,7 +12,6 @@ import { useAppSelector } from '../store/store';
 
 const App = (): ReactElement => {
   const { status } = useAppSelector(state => state.post);
-  //ввыф
   return (
     <div className="App">
       <Header />

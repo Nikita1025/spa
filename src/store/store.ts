@@ -12,6 +12,7 @@ export const rootReducer = combineReducers({
   post: postReducer,
 });
 
+//11
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 export type AppRootStateType = ReturnType<typeof rootReducer>;

@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line import/no-unresolved
 import avatar from '../../assets/images/avatar.jpeg';
 import {
   changeStatusAC,

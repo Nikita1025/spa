@@ -16,7 +16,7 @@ import { useAppDispatch, useAppSelector } from '../../store/store';
 
 import { Comment } from './comments/Comment';
 import style from './Posts.module.css';
-
+//s
 export const Posts = (): ReactElement => {
   const dispatch = useAppDispatch();
   const { posts } = useAppSelector(state => state.post);

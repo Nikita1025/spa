@@ -20,7 +20,7 @@ import style from './Posts.module.css';
 export const Posts = (): ReactElement => {
   const dispatch = useAppDispatch();
   const { posts } = useAppSelector(state => state.post);
-  //ы
+  //дд
   useEffect(() => {
     dispatch(changeStatusAC('loading'));
     setTimeout(() => {

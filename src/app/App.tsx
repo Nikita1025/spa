@@ -12,6 +12,7 @@ import { useAppSelector } from '../store/store';
 
 const App = (): ReactElement => {
   const { status } = useAppSelector(state => state.post);
+  //s
   return (
     <div className="App">
       <Header />
